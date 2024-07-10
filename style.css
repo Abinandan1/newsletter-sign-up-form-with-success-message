@@ -1,0 +1,224 @@
+/* FONTS */
+@font-face {
+  font-family: roboto;
+  src: url(./assets/fonts/Roboto-Regular.ttf);
+}
+@font-face {
+  font-family: robotoBold;
+  src: url(./assets/fonts/Roboto-Bold.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --tomato: hsl(4, 100%, 67%);
+  --pink: hsl(338, 79%, 66%);
+  --dark-slate-grey: hsl(234, 29%, 20%);
+  --charcoal-grey: hsl(235, 18%, 26%);
+  --grey: hsl(231, 7%, 60%);
+  --white: hsl(0, 0%, 100%);
+}
+
+body {
+  font-family: roboto;
+}
+
+/* NEWSLETTER */
+.newsletter-main {
+  background: var(--dark-slate-grey);
+  display: none;
+  min-height: 100vh;
+}
+.newsletter-card {
+  background: var(--white);
+  display: flex;
+  flex-direction: column-reverse;
+}
+.newsletter {
+  padding: 3rem 1.5rem;
+  color: var(--dark-slate-grey);
+}
+.newsletter h3 {
+  font-family: robotoBold;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+.newsletter > p {
+  margin-bottom: 1rem;
+}
+.newsletter p {
+  line-height: 1.5;
+}
+.points {
+  display: grid;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+.points div {
+  display: flex;
+  gap: 0.5rem;
+}
+/* SIGN UP FORM */
+form {
+}
+.form-row {
+  display: grid;
+  margin-bottom: 1rem;
+}
+.label-header {
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+}
+.form-label {
+  font-family: robotoBold;
+}
+/* ERROR MESSAGE */
+.error-message {
+  display: none;
+  color: var(--tomato);
+  font-family: robotoBold;
+}
+.show-message {
+  display: block;
+}
+.form-input {
+  height: 3rem;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  border: 1px solid var(--grey);
+  color: var(--dark-slate-grey);
+}
+.form-input:hover {
+  border-color: var(--dark-slate-grey);
+}
+/* INPUT ERROR */
+.error-form-input {
+  border-color: var(--tomato);
+  background: hsl(3, 60%, 93%);
+  color: var(--tomato);
+  letter-spacing: 1px;
+}
+.btn {
+  width: 100%;
+  background: var(--dark-slate-grey);
+  border: transparent;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  color: var(--white);
+  font-family: robotoBold;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+.btn:hover {
+  background: linear-gradient(to right, var(--pink), var(--tomato) 80%);
+  box-shadow: rgba(255, 98, 87, 0.75) 0px 25px 20px -15px;
+}
+/* COVER IMAGE */
+.img-container img {
+  display: block;
+  width: 100%;
+}
+.img-container img:nth-child(2) {
+  display: none;
+}
+
+/* SUCCESS MESSAGE */
+.success-main {
+  padding: 0 1.5rem;
+  display: none;
+}
+.success-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
+  min-height: 100vh;
+}
+.success-card h3 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: var(--dark-slate-grey);
+  font-family: robotoBold;
+  max-width: 60%;
+}
+.success-card img {
+  margin-top: 8rem;
+}
+.success-card p {
+  line-height: 1.5;
+  color: var(--dark-slate-grey);
+  max-width: 300px;
+}
+.email {
+  font-family: robotoBold;
+}
+.success-card .btn {
+  position: absolute;
+  bottom: 2rem;
+}
+
+/* SHOW MAIN */
+.show-main {
+  min-height: 100vh;
+  display: grid;
+}
+
+/* DESKTOP DESIGN */
+@media screen and (min-width: 768px) {
+  .newsletter-card {
+    width: 90%;
+    margin: 0 auto;
+    flex-direction: row;
+    border-radius: 1rem;
+    align-items: center;
+    max-width: 900px;
+  }
+  .newsletter {
+    padding: 3rem;
+  }
+  .show-main {
+    place-items: center;
+  }
+  .img-container {
+    padding: 3rem 1.5rem;
+    max-width: 400px;
+  }
+  .img-container img:nth-child(1) {
+    display: none;
+  }
+  .img-container img:nth-child(2) {
+    display: block;
+  }
+  .success-main {
+    background: var(--dark-slate-grey);
+  }
+  .success-card {
+    background: var(--white);
+    position: static;
+    width: 90%;
+    max-width: 500px;
+    min-height: auto;
+    padding: 3rem;
+    border-radius: 1rem;
+    gap: 1.5rem;
+  }
+  .success-card img {
+    margin-top: 0;
+  }
+  .success-card h3 {
+    max-width: none;
+  }
+  .success-card p {
+    max-width: none;
+  }
+  .success-card .btn {
+    position: static;
+  }
+}
